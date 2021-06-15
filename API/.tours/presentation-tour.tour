@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Presentation Tour",
+  "steps": [
+    {
+      "file": "starter/script.js",
+      "description": "Working Code\r\n```\r\nfunction getCountries(name) {\r\n  const request = new XMLHttpRequest();\r\n  request.open('GET', `https://restcountries.eu/rest/v2/name/${name}`);\r\n  //The API is being sent and data will be there on load event\r\n  request.send();\r\n\r\n  request.addEventListener('load', function () {\r\n    const [data] = JSON.parse(this.responseText);\r\n    console.log(data);\r\n    const html = `<article class=\"country\">\r\n  <img class=\"country__img\" src=\"${data.flag}\" />\r\n  <div class=\"country__data\">\r\n    <h3 class=\"country__name\">${data.name}</h3>\r\n    <h4 class=\"country__region\">${data.region}</h4>\r\n    <p class=\"country__row\"><span>👫</span>${data.population}</p>\r\n    <p class=\"country__row\"><span>🗣️</span>${data.languages[0].name}</p>\r\n    <p class=\"country__row\"><span>💰</span>${data.currencies[0].name}</p>\r\n  </div>\r\n</article>`;\r\n    countriesContainer.insertAdjacentHTML('beforeend', html);\r\n    countriesContainer.style.opacity = 1;\r\n  });\r\n}\r\ngetCountries('portugal');\r\ngetCountries('usa');\r\n```",
+      "line": 7
+    }
+  ]
+}

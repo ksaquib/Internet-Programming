@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "final code",
+  "steps": [
+    {
+      "file": "starter/script.js",
+      "description": "Final Working Code \r\n```\r\n'use strict';\r\n\r\nconst modal = document.querySelector('.modal');\r\nconst overlay = document.querySelector('.overlay');\r\nconst btnCloseModal = document.querySelector('.close-modal');\r\nconst btnsOpenModal = document.querySelectorAll('.show-modal');\r\n\r\nconst openModal = function () {\r\n  modal.classList.remove('hidden');\r\n  overlay.classList.remove('hidden');\r\n};\r\n\r\nconst closeModal = function () {\r\n  modal.classList.add('hidden');\r\n  overlay.classList.add('hidden');\r\n};\r\n\r\nfor (let i = 0; i < btnsOpenModal.length; i++)\r\n  btnsOpenModal[i].addEventListener('click', openModal);\r\n\r\nbtnCloseModal.addEventListener('click', closeModal);\r\noverlay.addEventListener('click', closeModal);\r\n\r\ndocument.addEventListener('keydown', function (e) {\r\n  // console.log(e.key);\r\n\r\n  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {\r\n    closeModal();\r\n  }\r\n});\r\n```",
+      "line": 2
+    }
+  ]
+}
